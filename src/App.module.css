@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 30px;
+}
+
+.mainContainer {
+  margin: 0;
+  padding: 20px;
+}
+
+.headerContainer {
+  max-width: 920px; 
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.calcContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 920px;
+  margin: auto;
+}
+
+.calcContainer .leftContainer,
+.calcContainer .rightContainer {
+  min-width: 350px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.calcContainer .leftContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.calcContainer .leftContainer h1 {
+  color: darkgreen;
+  text-align: start;
+  margin: 0 0 20px 0;
+}
+
+.calcContainer .leftContainer p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+form {
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.calcContainer .leftContainer input {
+  width: 100%;
+  margin-bottom: 30px;
+  border: 0;
+  border-bottom: 2px solid rgba(150,163,171,.5);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 0;
+  border: 2px solid darkgreen;
+  border-radius: 5px;
+  background-color: darkgreen;
+  font-size: 1.2rem;
+  color: aliceblue;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all .4s ease-in-out;
+}
+
+button:hover {
+  opacity: .8;
+  transition: .4s ease-in-out;
+}
+
+.calcContainer .rightContainer {
+  display: flex;
+  margin-left: 40px;
+  padding: 0 10px;
+}
+
+div.grid {
+  flex: 1;
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    padding: 10px 0;
+  }
+  .calcContainer .leftContainer,
+  .calcContainer .rightContainer {
+    margin: 15px 0;
+  }
+  .calcContainer .leftContainer {
+    margin-bottom: 50px;
+  }
+}
