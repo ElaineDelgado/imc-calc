@@ -17,7 +17,8 @@ const App = () => {
     setWeightField(parseFloat(e.target.value))
   }
 
-  const handleCalculateButton = () => {
+  const handleCalculateButton = (e:React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
     if(heightField && weightField) {
       alert(heightField +' ' + weightField) //ok: 1,6 40
       setItemShown(calculateImc(heightField, weightField)) 
