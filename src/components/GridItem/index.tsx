@@ -10,6 +10,9 @@ type Props = {
 const GridItem = ({item}: Props) => {
   return (
     <div className={styles.main} style={{backgroundColor:item.color}}>
+      {item.yourImc &&
+          <p className={styles.yourImc}>Seu IMC é: {item.yourImc}</p>
+          }
       <div className={styles.gridIcon}>
         <img src={item.icon === 'up' ? upImage : downImage} alt={item.title} />
       </div>
@@ -20,6 +23,7 @@ const GridItem = ({item}: Props) => {
         <p>
           IMC entre <strong>{item.imc[0]}</strong> e <strong>{item.imc[1]}</strong>
           </p>
+          
       </div>      
     </div>
   )

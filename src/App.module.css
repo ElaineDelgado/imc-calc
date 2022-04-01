@@ -27,7 +27,7 @@ body {
 
 .calcContainer .leftContainer,
 .calcContainer .rightContainer {
-  min-width: 350px;
+  /* min-width: 350px; */
   flex: 1;
   flex-wrap: wrap;
 }
@@ -85,20 +85,64 @@ button:hover {
   transition: .4s ease-in-out;
 }
 
+input:disabled, button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
 .calcContainer .rightContainer {
   display: flex;
   margin-left: 40px;
   padding: 0 10px;
 }
 
-div.grid {
+.rightContainer div.grid {
   flex: 1;
   display: grid; 
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
+.rightContainer div.divResult {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+div.divResult .rightArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid darkgreen;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+div.divResult .rightArrow:hover {
+  opacity:.8;
+}
+
+div.divResult .rightArrow img {
+  background-color: darkgreen;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 30px;
+}
+
+div.divResult .rightArrow p {
+  font-size: 20px;
+  color: darkgreen;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
+  .calcContainer {
+    flex-direction: column;
+  }
   .headerContainer {
     padding: 10px 0;
   }
@@ -109,4 +153,16 @@ div.grid {
   .calcContainer .leftContainer {
     margin-bottom: 50px;
   }
+  .rightContainer div.grid  {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  div.divResult .rightArrow img {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 512px) {
+  .rightContainer div.grid  {
+    grid-template-columns: repeat(1, 1fr);
+  } 
 }

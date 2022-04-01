@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './App.module.css'
 import poweredBy from './assets/powered.png'
+import leftArrowImage from './assets/leftarrow.png'
 import {levels, calculateImc, Level} from './helpers/imc'
 import GridItem from './components/GridItem'
 
@@ -20,12 +21,16 @@ const App = () => {
   const handleCalculateButton = (e:React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if(heightField && weightField) {
-      alert(heightField +' ' + weightField) //ok: 1,6 40
-      setItemShown(calculateImc(heightField, weightField)) 
-      alert(itemShown)          
+      setItemShown(calculateImc(heightField, weightField))         
     } else {
       alert('Preencha todos os campos')
     }
+  }
+
+  const handleBackButton = () => {
+    setItemShown(null)
+    setWeightField(0) 
+    setHeightField(0)
   }
 
   return (
@@ -45,14 +50,18 @@ const App = () => {
             value={heightField > 0 ? heightField : ''} 
             onChange={handleHeightChange} 
             placeholder="Digite sua altura"
+            disabled={itemShown !== null}
             />
             <input 
             type="number" 
             value={weightField > 0 ? weightField : ''} 
             onChange={handleWeightChange} 
             placeholder="Digite seu peso"
+            disabled={itemShown !== null}
             />
-            <button onClick={handleCalculateButton}>Calcular</button>
+            <button onClick={handleCalculateButton} disabled={itemShown !== null}>
+              Calcular
+            </button>
           </form>
         </div>
         <div className={styles.rightContainer}>
@@ -65,7 +74,10 @@ const App = () => {
           }
           {itemShown && 
             <div className={styles.divResult}>
-              <div className={styles.rightArrow}></div>
+              <div className={styles.rightArrow} onClick={handleBackButton}>
+                <img src={leftArrowImage} alt="Mão com dedo apontando para esquerda"/>
+                <p>Nova consulta</p>
+              </div>
               < GridItem item={itemShown}/>
             </div>
           }

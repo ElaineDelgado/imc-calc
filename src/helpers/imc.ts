@@ -11,13 +11,13 @@ export const levels:Level[] = [
     title: 'Magreza', 
     color: '#96a3ab', 
     icon: 'down',
-    imc: [0, 18.5],
+    imc: [0, 18.50],
   },
   { 
     title: 'Normal', 
     color: '#0ead69', 
     icon: 'up',
-    imc: [18.6, 24.9],
+    imc: [18.60, 24.90],
   },
   { 
     title: 'Sobrepeso', 
@@ -40,8 +40,9 @@ export const calculateImc = (height:number, weight: number) => {
     let maxHeight = levels[i].imc[1]
 
     if (imc >= minHeight && imc < maxHeight) {
-      levels[i].yourImc = parseFloat(imc.toFixed(1))
-      return levels[i]
+      let levelsCopy: Level = {...levels[i]}
+      levelsCopy.yourImc = parseFloat(imc.toFixed(2))
+      return levelsCopy
     }
   }  
   return null
