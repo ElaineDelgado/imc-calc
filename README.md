@@ -1,18 +1,10 @@
-<div align="center" id="top"> 
-
-  &#xa0;
-
-  <!-- <a href="https://imc_calc.netlify.app">Demo</a> -->
+<div align="center" id="top">  
 </div>
+<h1 align="center">Imc_calc</h1> 
 
-<h1 align="center">Imc_calc</h1>
-
-
- Status 
-
- <h4 align="center"> 
-	 🚀 Imc_calc  Finalizada
-</h4> 
+<a align="center" href="https://elaine-imccalc.netlify.app">
+	:sparkles: Clique aqui para ir para a aplicação
+</a> 
 
 <hr> 
 
