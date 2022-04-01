@@ -1,5 +1,4 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Imc_calc" />
 
   &#xa0;
 
@@ -9,13 +8,13 @@
 <h1 align="center">Imc_calc</h1>
 
 
-<!-- Status -->
+ Status 
 
-<!-- <h4 align="center"> 
-	🚧  Imc_calc 🚀 Under construction...  🚧
+ <h4 align="center"> 
+	 🚀 Imc_calc  Finalizada
 </h4> 
 
-<hr> -->
+<hr> 
 
 <p align="center">
   <a href="#dart-about">Sobre</a> &#xa0; | &#xa0; 
@@ -37,31 +36,28 @@
 
 ## :rocket: Tecnologias ##
 
-The following tools were used in this project:
+As seguintes tecnologias foram utilizadas nesse projeto:
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## :white_check_mark: Requerimentos ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Antes de começar :checkered_flag:, você precisa ter [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) instalados.
 
 ## :checkered_flag: Inicializando ##
 
 ```bash
-# Clone this project
+# Clonando o projeto:
 $ git clone https://github.com/ElaineDelgado/imc_calc
 
-# Access
+# Acessando:
 $ cd imc_calc
 
-# Install dependencies
-$ yarn
-
-# Run the project
+# Rodando o projeto:
 $ yarn start
 
-# The server will initialize in the <http://localhost:3000>
+# O servidor irá inicializar no endereço <http://localhost:3000>
 ```
 
 ## :memo: Licensa ##
