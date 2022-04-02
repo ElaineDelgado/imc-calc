@@ -5,6 +5,7 @@ import leftArrowImage from './assets/leftarrow.png'
 import {levels, calculateImc, Level} from './helpers/imc'
 import GridItem from './components/GridItem'
 
+
 const App = () => {
   const [heightField, setHeightField] = React.useState<number>(0)
   const [weightField, setWeightField] = React.useState<number>(0)
@@ -31,6 +32,19 @@ const App = () => {
     setItemShown(null)
     setWeightField(0) 
     setHeightField(0)
+    executeScroll()
+  }  
+
+  const myRef = React.useRef<HTMLDivElement>(null)
+  React.useEffect(() => {
+    if(itemShown) {
+      executeScroll()
+    }
+  })
+  const executeScroll = () => {
+    if(myRef.current) {
+      myRef.current.scrollIntoView({behavior: 'smooth'})
+    }
   }
 
   return (
@@ -65,7 +79,7 @@ const App = () => {
             </button>
           </form>
         </div>
-        <div className={styles.rightContainer}>
+        <div className={styles.rightContainer} ref={myRef}>
           {!itemShown &&
             <div className={styles.grid}>
               {levels.map((item, key) => (
@@ -79,7 +93,7 @@ const App = () => {
                 <img src={leftArrowImage} alt="Mão com dedo apontando para esquerda"/>
                 <p>Nova consulta</p>
               </div>
-              < GridItem item={itemShown}/>
+              < GridItem item={itemShown} />
             </div>
           }
         </div>

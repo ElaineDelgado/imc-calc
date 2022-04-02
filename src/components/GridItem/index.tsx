@@ -30,9 +30,3 @@ const GridItem = ({item}: Props) => {
 }
 
 export default GridItem
-
-/**
- * se em vez de index eu quiser criar um arquivo com nome do component, na hora de importar no app.tsx terei que fazer:
- * import GridItem from './components/GridItem/GridItem'
- * Com o index posso importar direto: import {GridItem} from './components/GridItem'
- */
