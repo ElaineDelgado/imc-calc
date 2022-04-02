@@ -1,27 +1,53 @@
+:root {
+  --main-color: #0ead69;
+  --text-dark: #2a2a2a;
+  --text-light: #f9f9f9;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  padding: 0 30px;
 }
 
-.mainContainer {
-  margin: 0;
+.mainContainer { 
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  min-height: 100vh;
   padding: 20px;
 }
 
-.headerContainer {
-  max-width: 920px; 
-  margin: 0 auto;
-  padding: 40px 0;
+.mainContainer header {
+  width: 100%;
+}
+
+.imgHeaderContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+  padding: 40px 0;  
+}
+
+.imgHeaderContainer img { 
+    max-width: 20%;
+    height: auto;
+    min-width: 115px;
+}
+
+.imgHeaderContainer h1 { 
+  white-space: nowrap;
+  color: var(--text-dark);
+  margin: 0 0 0 35px;
 }
 
 .calcContainer {
   display: flex;
   flex-wrap: wrap;
-  max-width: 920px;
   margin: auto;
 }
 
@@ -38,8 +64,8 @@ body {
   align-items: flex-start;
 }
 
-.calcContainer .leftContainer h1 {
-  color: darkgreen;
+.calcContainer .leftContainer h2 {
+  color: var(--main-color);
   text-align: start;
   margin: 0 0 20px 0;
 }
@@ -47,6 +73,7 @@ body {
 .calcContainer .leftContainer p {
   font-size: 1rem;
   font-weight: 600;
+  color: var(--text-dark);
   margin-bottom: 40px;
 }
 
@@ -70,19 +97,21 @@ flex-wrap: wrap;
 button {
   width: 100%;
   padding: 10px 0;
-  border: 2px solid darkgreen;
+  border: 2px solid var(--main-color);
   border-radius: 5px;
-  background-color: darkgreen;
+  background-color: var(--main-color);
   font-size: 1.2rem;
-  color: aliceblue;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--text-light);
   cursor: pointer;
   margin-top: 15px;
-  transition: all .4s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 button:hover {
-  opacity: .8;
-  transition: .4s ease-in-out;
+  opacity: .7;
+  transition: .3s ease-in-out;
 }
 
 input:disabled, button:disabled {
@@ -113,7 +142,7 @@ div.divResult .rightArrow {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid darkgreen;
+  border: 3px solid var(--main-color);
   border-radius: 5px;
   margin-bottom: 15px;
   cursor: pointer;
@@ -125,7 +154,7 @@ div.divResult .rightArrow:hover {
 }
 
 div.divResult .rightArrow img {
-  background-color: darkgreen;
+  background-color: var(--main-color);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -135,7 +164,7 @@ div.divResult .rightArrow img {
 
 div.divResult .rightArrow p {
   font-size: 20px;
-  color: darkgreen;
+  color: var(--main-color);
   font-weight: bold;
 }
 
@@ -143,7 +172,7 @@ div.divResult .rightArrow p {
   .calcContainer {
     flex-direction: column;
   }
-  .headerContainer {
+  .imgHeaderContainer {
     padding: 10px 0;
   }
   .calcContainer .leftContainer,
@@ -165,4 +194,24 @@ div.divResult .rightArrow p {
   .rightContainer div.grid  {
     grid-template-columns: repeat(1, 1fr);
   } 
+  .imgHeaderContainer h1 { 
+    font-size: 24px;
+  }
+  .calcContainer .leftContainer h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+.imgHeaderContainer {
+  flex-direction: column; 
+    justify-content:center
+  }
+  .imgHeaderContainer h1 { 
+    margin:  10px 0;
+  }
+  .calcContainer .leftContainer h2 {
+  color: var(--main-color);
+    margin: 0 0 5px 0;
+  }
 }

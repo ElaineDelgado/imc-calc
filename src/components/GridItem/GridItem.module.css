@@ -1,6 +1,12 @@
+:root {
+  --main-color: #0ead69;
+  --text-dark: #2a2a2a;
+  --text-light: #f9f9f9;
+}
+
 .main {
   flex: 1; 
-  color: #fcfcfc;
+  color: var(--text-light);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-    border-radius: 50%;
+  border-radius: 50%;
   background-color: rgba(0,0,0,.1);
 }
 
@@ -40,10 +46,10 @@
   }
   .gridTitle h2 {
   font-size: 18px;
-}
-.gridIcon {
-  width: 50px;
-  height: 50px;
-}
+  }
+  .gridIcon {
+    width: 50px;
+    height: 50px;
+  }
 }
 

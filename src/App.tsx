@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './App.module.css'
-import poweredBy from './assets/powered.png'
+import poweredBy from './assets/logo.png'
 import leftArrowImage from './assets/leftarrow.png'
 import {levels, calculateImc, Level} from './helpers/imc'
 import GridItem from './components/GridItem'
@@ -36,13 +36,14 @@ const App = () => {
   return (
     <main className={styles.mainContainer}>
       <header>
-        <div className={styles.headerContainer}>
-          <img src={poweredBy} alt="Logo retangulo azul com texto branco IMC no centro" width={150} />
+        <div className={styles.imgHeaderContainer}>
+          <img src={poweredBy} alt="Logo retangulo verde contendo texto branco dizendo IMC CALC e um ícone de coração" />
+          <h1>Calculadora de IMC</h1>
         </div>
       </header>
       <section className={styles.calcContainer}>
         <div className={styles.leftContainer}>
-          <h1>Calcule seu IMC</h1>
+          <h2>Calcule seu IMC</h2>
           <p>O IMC é a sigla para Indice de Massa Corpórea, parâmetro adotado pela Organização Mundial da Saúde (OMS) para calcular o peso ideal de cada pessoa.</p>
           <form>  
             <input 
