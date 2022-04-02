@@ -25,6 +25,8 @@
  Calculadora de IMC: O IMC (Indice de Massa Corpórea) é calculado dividindo o peso (em kg) pela altura ao quadrado (em metros).
  O IMC é reconhecido como padrão internacional para avaliar o grau de sobrepeso e obesidade. 
 </p>
+<br>
+<img src="https://i.imgur.com/1mAYaOv.png" />
 
 ## :rocket: Tecnologias ##
 
