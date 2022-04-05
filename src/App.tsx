@@ -36,11 +36,12 @@ const App = () => {
   }  
 
   const myRef = React.useRef<HTMLDivElement>(null)
+
   React.useEffect(() => {
     if(itemShown) {
       executeScroll()
     }
-  })
+  },[itemShown])
   const executeScroll = () => {
     if(myRef.current) {
       myRef.current.scrollIntoView({behavior: 'smooth'})
@@ -64,14 +65,14 @@ const App = () => {
             type="number" 
             value={heightField > 0 ? heightField : ''} 
             onChange={handleHeightChange} 
-            placeholder="Digite sua altura"
+            placeholder="Digite sua altura: Ex 1,80"
             disabled={itemShown !== null}
             />
             <input 
             type="number" 
             value={weightField > 0 ? weightField : ''} 
             onChange={handleWeightChange} 
-            placeholder="Digite seu peso"
+            placeholder="Digite seu peso: Ex 75"
             disabled={itemShown !== null}
             />
             <button onClick={handleCalculateButton} disabled={itemShown !== null}>
